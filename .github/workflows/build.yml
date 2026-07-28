@@ -62,9 +62,9 @@ jobs:
         libfftw3-dev
         libgfortran5
         libgmp-dev
-        libhdf5-dev
         libgsl-dev
-        liblapack-dev
+        libhdf5-dev
+        libopenblas-dev
         libopenmpi-dev
         openmpi-bin
         openmpi-common
@@ -81,7 +81,6 @@ jobs:
 
     - name: Set up virtualenv
       run: |
-        brew install ccache gcc@12 llvm boost fftw hdf5 open-mpi openblas gsl
         mkdir $HOME/.venv
         python3 -m venv --system-site-packages $HOME/.venv/my_python
         source $HOME/.venv/my_python/bin/activate
@@ -92,7 +91,7 @@ jobs:
       if: ${{ contains(matrix.os, 'macos') }}
       run: |
         brew update
-        brew install ccache gcc llvm boost fftw hdf5 open-mpi openblas
+        brew install ccache gcc llvm boost fftw hdf5 open-mpi openblas gsl
         pip install mako numpy scipy mpi4py
         pip install -r requirements.txt
         echo "PATH=$(brew --prefix llvm)/bin:$(brew --prefix gcc)/bin:$PATH" >> $GITHUB_ENV
