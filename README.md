@@ -1,4 +1,4 @@
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21691818.svg)](https://doi.org/10.5281/zenodo.21691818)
+[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.21691818-blue.svg)](https://doi.org/10.5281/zenodo.21691818)
 
 # OmegaMaxEnt_TRIQS
 
